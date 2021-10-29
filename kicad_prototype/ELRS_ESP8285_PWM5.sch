@@ -6,9 +6,9 @@ encoding utf-8
 Sheet 1 1
 Title "ELRS ESP8285 5xPWM"
 Date "2021-10-29"
-Rev "work in progress "
+Rev "work in progress"
 Comp "crteensy"
-Comment1 "crteensy"
+Comment1 ""
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -703,7 +703,7 @@ U 1 1 615F4059
 P 2700 4500
 F 0 "U2" H 2700 5515 50  0000 C CNN
 F 1 "ESP8285" H 2700 5424 50  0000 C CNN
-F 2 "Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.7x3.7mm" H 2700 4900 50  0001 C CNN
+F 2 "ELRS_ESP8285_PWM5:QFN-32-1EP_5x5mm_P0.5mm_EP3.7x3.7mm_dense" H 2700 4900 50  0001 C CNN
 F 3 "" H 2700 4900 50  0001 C CNN
 	1    2700 4500
 	1    0    0    -1  
@@ -1305,8 +1305,6 @@ F 3 "" H 4000 4200 50  0001 C CNN
 	1    4000 4200
 	1    0    0    -1  
 $EndComp
-Text Notes 1100 5150 0    50   ~ 0
-BOOT
 Text GLabel 1050 5150 0    50   Output ~ 0
 PWM1
 Wire Notes Line
@@ -1362,13 +1360,13 @@ Wire Wire Line
 $Comp
 L Connector:TestPoint TP1
 U 1 1 61AB1B8D
-P 4500 3850
-F 0 "TP1" V 4454 4038 50  0000 L CNN
-F 1 "TestPoint" V 4545 4038 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 4700 3850 50  0001 C CNN
-F 3 "~" H 4700 3850 50  0001 C CNN
-	1    4500 3850
-	0    1    1    0   
+P 1250 5300
+F 0 "TP1" V 1204 5488 50  0000 L CNN
+F 1 "BOOT" V 1295 5488 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 1450 5300 50  0001 C CNN
+F 3 "~" H 1450 5300 50  0001 C CNN
+	1    1250 5300
+	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:C_Small C10
@@ -1443,7 +1441,7 @@ Wire Wire Line
 Wire Wire Line
 	1450 5150 2000 5150
 Wire Wire Line
-	1050 5150 1450 5150
+	1050 5150 1350 5150
 Connection ~ 1450 5150
 $Comp
 L Device:C_Small C11
@@ -1547,8 +1545,13 @@ Wire Wire Line
 	4450 4750 4450 4850
 Wire Wire Line
 	4350 4750 4450 4750
-Text Notes 800  6250 0    50   ~ 0
-BOOT
 Text Notes 1650 6700 0    50   ~ 0
 BOOT
+Wire Wire Line
+	1250 5300 1350 5300
+Wire Wire Line
+	1350 5300 1350 5150
+Connection ~ 1350 5150
+Wire Wire Line
+	1350 5150 1450 5150
 $EndSCHEMATC
