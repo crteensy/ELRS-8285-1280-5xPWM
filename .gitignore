@@ -24,3 +24,6 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
+
+# double sided layout is for local experimentation only
+kicad_doublesided/*
