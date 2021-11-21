@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "ELRS ESP8285 5xPWM"
-Date "2021-11-01"
-Rev "rev 0.3"
+Date "2021-11-22"
+Rev "rev 0.6"
 Comp "crteensy"
 Comment1 ""
 Comment2 ""
@@ -262,7 +262,7 @@ L Device:LED D1
 U 1 1 61761ACA
 P 4700 1250
 F 0 "D1" V 4739 1132 50  0000 R CNN
-F 1 "LED" V 4648 1132 50  0000 R CNN
+F 1 "blue_2V9" V 4648 1132 50  0000 R CNN
 F 2 "LED_SMD:LED_0402_1005Metric" H 4700 1250 50  0001 C CNN
 F 3 "~" H 4700 1250 50  0001 C CNN
 	1    4700 1250
@@ -284,7 +284,7 @@ L Device:R_Small R11
 U 1 1 61762D12
 P 4700 1600
 F 0 "R11" V 4900 1600 50  0000 C CNN
-F 1 "560R" V 4800 1600 50  0000 C CNN
+F 1 "270R" V 4800 1600 50  0000 C CNN
 F 2 "Resistor_SMD:R_0402_1005Metric" H 4700 1600 50  0001 C CNN
 F 3 "~" H 4700 1600 50  0001 C CNN
 	1    4700 1600
@@ -308,7 +308,7 @@ L Device:LED D2
 U 1 1 617C4CB3
 P 1050 1550
 F 0 "D2" V 1089 1432 50  0000 R CNN
-F 1 "LED" V 998 1432 50  0000 R CNN
+F 1 "true_gr_3V3" V 998 1432 50  0000 R CNN
 F 2 "LED_SMD:LED_0402_1005Metric" H 1050 1550 50  0001 C CNN
 F 3 "~" H 1050 1550 50  0001 C CNN
 	1    1050 1550
@@ -319,7 +319,7 @@ L Device:R_Small R12
 U 1 1 617C4CBF
 P 1050 1200
 F 0 "R12" V 1250 1200 50  0000 C CNN
-F 1 "3k9" V 1150 1200 50  0000 C CNN
+F 1 "4k7" V 1150 1200 50  0000 C CNN
 F 2 "Resistor_SMD:R_0402_1005Metric" H 1050 1200 50  0001 C CNN
 F 3 "~" H 1050 1200 50  0001 C CNN
 	1    1050 1200
@@ -891,7 +891,7 @@ L Device:LED D4
 U 1 1 617855C9
 P 6400 2800
 F 0 "D4" V 6439 2682 50  0000 R CNN
-F 1 "LED" V 6348 2682 50  0000 R CNN
+F 1 "red_2V1" V 6348 2682 50  0000 R CNN
 F 2 "LED_SMD:LED_0402_1005Metric" H 6400 2800 50  0001 C CNN
 F 3 "~" H 6400 2800 50  0001 C CNN
 	1    6400 2800
@@ -1354,8 +1354,6 @@ F 3 "~" H 4350 3600 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3400 3750 4350 3750
-Wire Wire Line
-	4350 3750 4350 3850
 $Comp
 L Connector:TestPoint TP1
 U 1 1 61AB1B8D
@@ -1462,11 +1460,6 @@ Wire Wire Line
 	1550 4750 2000 4750
 Wire Wire Line
 	1450 4750 1150 4750
-Wire Wire Line
-	4500 3850 4350 3850
-Connection ~ 4350 3850
-Wire Wire Line
-	4350 3850 4350 3950
 $Comp
 L power:+3V3 #PWR0126
 U 1 1 61CDBC63
@@ -1479,17 +1472,7 @@ F 3 "" H 4350 3500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	850  3850 2000 3850
-Wire Notes Line
-	900  3600 900  3900
-Wire Notes Line
-	900  3900 1450 3900
-Wire Notes Line
-	1450 3900 1450 3600
-Wire Notes Line
-	1450 3600 900  3600
-Text Notes 1050 3800 0    50   ~ 10
-CAP\nHERE?
+	850  3850 1100 3850
 $Comp
 L Connector:Conn_Coaxial J5
 U 1 1 61E6AAB7
@@ -1671,12 +1654,12 @@ Wire Wire Line
 Wire Wire Line
 	6300 1550 6700 1550
 $Comp
-L Jumper:SolderJumper_2_Bridged JP1
+L Jumper:SolderJumper_2_Open JP1
 U 1 1 61A51B28
 P 6450 1100
 F 0 "JP1" H 6450 1305 50  0000 C CNN
-F 1 "6S4S" H 6450 1214 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 6450 1100 50  0001 C CNN
+F 1 "4S" H 6450 1214 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 6450 1100 50  0001 C CNN
 F 3 "~" H 6450 1100 50  0001 C CNN
 	1    6450 1100
 	1    0    0    -1  
@@ -1689,7 +1672,7 @@ Connection ~ 6700 1550
 Wire Wire Line
 	6700 1550 6900 1550
 Text Notes 6000 850  0    50   ~ 0
-JP closed (default) for 6S\nCut open for 4S
+JP open (default) for 6S\nClose for 4S
 Wire Notes Line
 	5950 650  5950 1200
 Wire Notes Line
@@ -1698,4 +1681,19 @@ Wire Notes Line
 	7050 1200 7050 650 
 Wire Notes Line
 	7050 650  5950 650 
+$Comp
+L Device:C_Small C13
+U 1 1 61B221AE
+P 1200 3850
+F 0 "C13" H 1292 3896 50  0000 L CNN
+F 1 "10p" H 1292 3805 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 1200 3850 50  0001 C CNN
+F 3 "~" H 1200 3850 50  0001 C CNN
+	1    1200 3850
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1300 3850 2000 3850
+Wire Wire Line
+	4350 3750 4350 3950
 $EndSCHEMATC
